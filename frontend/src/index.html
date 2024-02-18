@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge, Chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgo=">
+    <!-- Main Source Files -->
+    <link rel="stylesheet" href="main.css"/>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="libs/jquery-3.4.1.min.js"></script>
+    <script src="main.js"></script>
+</head>
+
+<body id="app" class="app" style="--wails-draggable:drag">
+<header>
+    <!-- 要监听的 直播间号码 -->
+    <input id="room-id" type="text" class="input text-black" placeholder="请输入直播间号码"/>
+    <!-- 开始按钮 -->
+    <button id="start-btn" type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+            onclick="greet()">开始
+    </button>
+</header>
+<main>
+    <!-- 直播间消息列表 -->
+    <ul id="messages" class="list-disc">
+        <!-- 消息列表项-->
+    </ul>
+</main>
+<footer>
+    <!--  -->
+</footer>
+</body>
+
+</html>
