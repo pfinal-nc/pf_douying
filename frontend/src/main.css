@@ -3,7 +3,7 @@ html {
     text-align: center;
     /*color: white;*/
 }
-
+/* 3683557816 */
 body {
     margin: 0;
     color: white;
@@ -76,8 +76,7 @@ body {
     background-color: rgba(255, 255, 255, 1);
 }
 
-.messages {
-    height: 300px; /* 设置容器的高度 */
-    overflow-y: auto; /* 设置纵向滚动条 */
-    padding: 10px;
+#journal-scroll {
+    /*max-height: 200px;*/
+    overflow-y: auto;
 }

@@ -14,23 +14,33 @@
 </head>
 
 <body id="app" class="app" style="--wails-draggable:drag">
-<header>
-    <!-- 要监听的 直播间号码 -->
-    <input id="room-id" type="text" class="input text-black" placeholder="请输入直播间号码"/>
-    <!-- 开始按钮 -->
-    <button id="start-btn" type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-            onclick="greet()">开始
-    </button>
-</header>
-<main>
-    <!-- 直播间消息列表 -->
-    <ul id="messages" class="list-disc">
-        <!-- 消息列表项-->
-    </ul>
-</main>
-<footer>
-    <!--  -->
-</footer>
+<div class="container mx-auto flex justify-center h-screen">
+    <div class="w-full  h-full flex flex-col">
+        <div class="text-sm text-gray-500 font-bold px-5 py-2 shadow border-b border-gray-300">
+            <input type="text" id="room-id" required="" class="w-full/4 border bg-gray-50 py-1 focus:outline-none focus:ring-2 focus:ring-blue-500 disabled:cursor-not-allowed disabled:opacity-50"
+                   placeholder="直播间号" value=""/>
+            <button type="button" onclick="greet()" class="w-full/2  border border-blue-500 bg-blue-500 py-1 px-4 text-white transition hover:border-blue-600 hover:bg-blue-600 focus:outline-none focus:ring-4 focus:ring-blue-500 focus:ring-opacity-50 disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:border-blue-500 disabled:hover:bg-blue-500 sm:max-w-max">
+                监听
+            </button>
+            <button type="button" onclick="stop()" class="w-full/2 border border-blue-500 bg-blue-500 py-1 px-4 text-white transition hover:border-blue-600 hover:bg-blue-600 focus:outline-none focus:ring-4 focus:ring-blue-500 focus:ring-opacity-50 disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:border-blue-500 disabled:hover:bg-blue-500 sm:max-w-max">
+                停止
+            </button>
+        </div>
+        <div class="text-left text-sm text-white font-bold px-5 py-2 shadow border-b border-gray-300">
+            弹幕消息
+        </div>
+        <div class="text-left w-full h-full overflow-auto shadow text-white" id="journal-scroll">
+            <table class="w-full">
+                <tbody class="messages">
+                <tr class="relative transform scale-100 text-xs py-1">
+                    <td class="pl-5 px-2 py-2 whitespace-no-wrap">
+                        <div class="leading-5 text-white">Create pull request #1213</div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
 </body>
-
 </html>

@@ -47,7 +47,6 @@ func (a *App) Greet(name string) string {
 }
 
 func (a *App) JoinRoom(roomId string) int {
-	fmt.Println(roomId)
 	rand.Seed(uint64(time.Now().UnixNano()))
 
 	liveID := roomId
@@ -56,6 +55,12 @@ func (a *App) JoinRoom(roomId string) int {
 	// defer fetcher.Stop()
 	// Keep main alive
 	return 1
+}
+
+func (a *App) LiveRoom() int {
+	// 通道中写入状态
+	lib.StateChan <- "colse"
+	return 0
 }
 
 func (a *App) GetRoomMsg() string {

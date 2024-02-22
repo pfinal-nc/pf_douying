@@ -23,6 +23,9 @@ import (
 // MessageChan 创建一个 存储消息的通道
 var MessageChan = make(chan string, 50)
 
+// StateChan 创建一个 存储状态的通道
+var StateChan = make(chan string, 1)
+
 func generateMsToken(length int) string {
 	randomStr := ""
 	baseStr := "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789=_"
@@ -169,6 +172,15 @@ func (d *DouyinLiveWebFetcher) wsOnOpen() {
 
 func (d *DouyinLiveWebFetcher) wsLoop() {
 	for {
+		// 监听状态通道 如果状态通道中有消息 则停止循环
+		select {
+		case <-StateChan:
+			fmt.Println("停了")
+			//d.Stop()
+			//return
+		default:
+			// 继续循环
+		}
 		_, message, err := d.ws.ReadMessage()
 		// fmt.Println(message)
 		if err != nil {
